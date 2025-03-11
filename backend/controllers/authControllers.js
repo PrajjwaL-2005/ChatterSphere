@@ -11,7 +11,6 @@ export const registerUser = TryCatch(async(req,res)=>{
 
         
     const{ name, email, password, gender } = req.body 
-
     const file = req.file;
     if(!name || !email ||!password ||!gender || !file){
         return res.status(400).json({
