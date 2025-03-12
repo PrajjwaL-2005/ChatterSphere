@@ -1,5 +1,21 @@
-import express from "express"
+import express from "express" 
+import { isAuth } from "../middlewares/isAuth.js";
+import { commentonPost, 
+    deleteComment, deletePost , 
+    editCaption, getAllPosts, 
+    likeUnlikePost, newPost } from "../controllers/postControllers.js";
+import uploadFile from "../middlewares/multer.js";
 
-const router = express.Router()
+
+const router = express.Router() ;
+router.post("/new" , isAuth ,uploadFile , newPost) ;
+
+router.delete("/:id" , isAuth , deletePost) ;
+router.put("/:id" , isAuth , editCaption) ;
+
+router.get("/all" , isAuth , getAllPosts) ;
+router.post("/like/:id" , isAuth , likeUnlikePost) ;
+router.post("/comment/:id" , isAuth , commentonPost) ;
+router.post("/comment/:id" , isAuth , deleteComment) ;
 
 export default router;
