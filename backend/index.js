@@ -8,6 +8,7 @@ import messageRoutes from './routes/messageRoutes.js' ;
 import cloudinary from "cloudinary"
 import cookieParser from "cookie-parser";
 import { Chat } from "./models/ChatModel.js";
+import { isAuth } from "./middlewares/isAuth.js";
 
 
 
@@ -39,7 +40,7 @@ app.get("/chats" , isAuth , async(req,res)=>{
             users: req.user._id , 
         }).populate({
             path: "Users" , 
-            select: "name ProfilePic" ,``
+            select: "name ProfilePic" ,
         }) ;
         res.json(chats) ;
     } catch(error){

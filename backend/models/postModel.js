@@ -16,7 +16,7 @@ const postSchema = new mongoose.Schema({
         ref : "User" ,
     } , 
     createdAt:{
-        type : Data , 
+        type : Date , 
         default : Date.now ,
     },
     likes:[
@@ -30,7 +30,7 @@ const postSchema = new mongoose.Schema({
     comments:[
         {
             user:{
-                type : mongoose.Schema.Types.ObectId , 
+                type : mongoose.Schema.Types.ObjectId , 
                 ref : "User" , 
 
             },

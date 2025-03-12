@@ -16,6 +16,6 @@ router.put("/:id" , isAuth , editCaption) ;
 router.get("/all" , isAuth , getAllPosts) ;
 router.post("/like/:id" , isAuth , likeUnlikePost) ;
 router.post("/comment/:id" , isAuth , commentonPost) ;
-router.post("/comment/:id" , isAuth , deleteComment) ;
+router.delete("/comment/:id" , isAuth , deleteComment) ;
 
 export default router;

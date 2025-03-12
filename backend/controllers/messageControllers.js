@@ -32,7 +32,7 @@ export const sendMessage = TryCatch(async(req, res) => {
         text : message ,
     }) ;
 
-    await newMesssage.save() 
+    await newMessage.save() 
 
     await chat.updateOne({
         latestMessage: {
