@@ -42,6 +42,9 @@ app.get("/chats" , isAuth , async(req,res)=>{
             path: "Users" , 
             select: "name ProfilePic" ,
         }) ;
+        chats.forEach((e) => {
+            e.users = e.users.filter(user => user._id.toString() !== req.user._id.toString())
+        })
         res.json(chats) ;
     } catch(error){
         res.status(500).json({
