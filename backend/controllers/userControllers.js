@@ -11,6 +11,20 @@ export const myProfile = TryCatch(async(req,res)=>{
 });
 
 export const userProfile = TryCatch(async(req,res)=>{
+    if (req.params.id === "all"){
+        const search = req.query.search || ""
+        const users = await User.find({
+            name :{
+                $regex:search,
+                $options:"i"
+            },
+            _id:{$ne :req.user._id},
+        }).select("-password");
+
+        res.json(users);
+
+        return;
+    }
     const user = await User.findById(req.params.id).select("-password");
     
     if(!user) return res.status(404).json({
@@ -101,4 +115,9 @@ export const updatePassword = TryCatch(async(req,res)=>{
     res.json({
         message:"Password Updated",
     })
+})
+
+export const getAllUsers = TryCatch(async(req,res)=>{
+    const users = await User.find();
+    res.json(users);
 })

@@ -9,6 +9,7 @@ import cloudinary from "cloudinary"
 import cookieParser from "cookie-parser";
 import { Chat } from "./models/ChatModel.js";
 import { isAuth } from "./middlewares/isAuth.js";
+import {User} from "./models/userModel.js"
 
 
 
@@ -52,6 +53,7 @@ app.get("/chats" , isAuth , async(req,res)=>{
         }) ;
     }
 }) ;
+
 
 app.listen(port , ()=>{
     console.log(`Server running at ${port}`);

@@ -6,12 +6,14 @@ import generateToken from "../utlis/generateToken.js";
 import TryCatch from "../utlis/TryCatch.js";
 
 export const registerUser = TryCatch(async(req,res)=>{
+    console.log("here")
     const body = JSON.parse(JSON.stringify(req.body));
     console.log('Request Body:', body);
 
         
     const{ name, email, password, gender } = req.body 
     const file = req.file;
+    console.log(file)
     if(!name || !email ||!password ||!gender || !file){
         return res.status(400).json({
             message:"Please give all values",

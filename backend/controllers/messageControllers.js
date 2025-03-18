@@ -1,6 +1,6 @@
-import { Chat } from "../models/ChatModel";
-import { Messages } from "../models/Messages";
-import TryCatch from "../utlis/Trycatch";
+import { Chat } from "../models/ChatModel.js";
+import { Messages } from "../models/Messages.js";
+import TryCatch from "../utlis/Trycatch.js";
 
 export const sendMessage = TryCatch(async(req, res) => {
     const{revieverId , message} = req.body ;

@@ -1,5 +1,5 @@
 import express from "express"
-import { followandUnfollowUser, myProfile, updatePassword, updateProfile, userFollowerandFollowingData, userProfile } from "../controllers/userControllers.js";
+import { followandUnfollowUser, getAllUsers, myProfile, updatePassword, updateProfile, userFollowerandFollowingData, userProfile } from "../controllers/userControllers.js";
 import { isAuth } from "../middlewares/isAuth.js";
 import uploadFile  from "../middlewares/multer.js";
 
@@ -13,6 +13,7 @@ router.put("/:id" , isAuth , uploadFile,updateProfile);
 
 router.post("/follow/:id" , isAuth , followandUnfollowUser);
 router.get("/followdata/:id" , isAuth , userFollowerandFollowingData);
+// router.get("/all" , isAuth , getAllUsers);
 
 
 
