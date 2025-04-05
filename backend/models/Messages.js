@@ -1,20 +1,17 @@
-import mongoose from "mongoose" ;
+import mongoose from "mongoose";
 
-const messageSchema = new mongoose.Schema({
+const messageSchema = new mongoose.Schema(
+  {
     chatId: {
-        type: mongoose.Schema.Types.ObjectId ,
-        ref : "Chat" ,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Chat",
     },
-sender :{
-    type: mongoose.Schema.Types.ObjectId ,
-    ref : "User" ,
-} ,
-
-text : String  , 
-
-} , {
-    timestamps : true ,
-} 
+    sender: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    text: String,
+  },
+  {
+    timestamps: true,
+  }
 );
 
-export const Messages = mongoose.model("Messages" , messageSchema) ;
+export const Messages = mongoose.model("Messages", messageSchema);

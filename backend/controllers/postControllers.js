@@ -1,6 +1,6 @@
 import { Post } from "../models/postModel.js";
 import TryCatch from "../utils/Trycatch.js";
-import getDataUrl from "../utils/urlGenrator.js";
+import getDataUrl from "../utils/urlGenerator.js";
 import cloudinary from "cloudinary";
 
 export const newPost = TryCatch(async (req, res) => {
