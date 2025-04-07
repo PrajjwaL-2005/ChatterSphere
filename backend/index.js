@@ -9,8 +9,6 @@ import { User } from "./models/userModel.js";
 import { app, server } from "./socket/socket.js";
 import path from "path";
 import axios from 'axios';
-import cors from 'cors';
-
 
 const url = `https://mern-social-3e3m.onrender.com`;
 const interval = 30000;
@@ -44,7 +42,6 @@ cloudinary.v2.config({
 });
 
 //using middlewares
-app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 

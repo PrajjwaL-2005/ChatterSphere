@@ -20,8 +20,3 @@ router.post("/follow/:id", isAuth, followandUnfollowUser);
 router.get("/followdata/:id", isAuth, userFollowerandFollowingData);
 
 export default router;
-// router.get("/all" , isAuth , getAllUsers);
-
-
-
-

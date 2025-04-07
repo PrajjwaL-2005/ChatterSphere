@@ -1,7 +1,7 @@
 import { User } from "../models/userModel.js";
 import TryCatch from "../utils/Trycatch.js";
 import generateToken from "../utils/generateToken.js";
-import getDataUrl from "../utils/urlGenerator.js";
+import getDataUrl from "../utils/urlGenrator.js";
 import bcrypt from "bcrypt";
 import cloudinary from "cloudinary";
 

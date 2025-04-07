@@ -128,7 +128,7 @@ export const UserContextProvider = ({ children }) => {
       }}
     >
       {children}
-      {/* <Toaster /> */}
+      <Toaster />
     </UserContext.Provider>
   );
 };
