@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AddPost from "../components/AddPost";
 import { PostData } from "../context/PostContext";
-import PostCard from "../components/PostCard.jsx";
+import PostCard from "../components/PostCard";
 import { FaArrowUp, FaArrowDownLong } from "react-icons/fa6";
 import { Loading } from "../components/Loading";
 
